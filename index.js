@@ -1,7 +1,9 @@
 import express from 'express';
 import pool from './database/connection.js'
 import registration from './routes/registration.routes.js'
+import bodyParser from 'body-parser';
 const app = express();
+app.use(bodyParser.json());
 
 // Test database connection
 pool.connect((err, client, release) => {
